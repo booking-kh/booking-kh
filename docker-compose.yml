@@ -61,7 +61,7 @@ services:
       - bookingkh_api
 
   npm:
-    image: node:13.7
+    image: node:13.11
     container_name: npm
     volumes:
       - .:/var/www/html
@@ -81,3 +81,8 @@ services:
     entrypoint: ['php', '/var/www/html/artisan']
     networks:
       - bookingkh_api
+
+  ## redis
+  redis:
+    container_name: redis
+    image: redis:alpine
